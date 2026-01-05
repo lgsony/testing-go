@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoParts2U | Automotive Parts Supplier</title>
+
+<style>
+:root{--blue:#0a3d91;}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#222}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 20px;border-bottom:1px solid #eee;background:#fff;
+  position:sticky;top:0;z-index:100;
+}
+.logo{font-size:22px;font-weight:bold;color:var(--blue)}
+nav{display:flex;gap:18px;align-items:center}
+.dropdown{position:relative}
+.dropdown span{cursor:pointer}
+.dropdown-menu{
+  display:none;position:absolute;top:100%;left:0;
+  background:#fff;border:1px solid #ddd;min-width:220px;
+}
+.dropdown-menu a{display:block;padding:10px 14px}
+.dropdown:hover .dropdown-menu{display:block}
+.lang button{border:none;background:none;font-weight:bold;cursor:pointer}
+.burger{display:none;font-size:22px;cursor:pointer}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#0a3d91,#0f5bc4);
+  color:#fff;text-align:center;padding:90px 20px;
+}
+.hero h1{font-size:34px;margin-bottom:10px}
+.hero p{max-width:800px;margin:0 auto 22px}
+.btn{
+  display:inline-block;background:#25D366;color:#fff;
+  padding:14px 26px;border-radius:6px;font-size:16px;
+}
+
+/* SECTION */
+section{padding:70px 20px;max-width:1200px;margin:auto}
+h2{color:var(--blue);margin-bottom:20px}
+.grid{display:grid;gap:22px}
+.cats{grid-template-columns:repeat(4,1fr)}
+.products{grid-template-columns:repeat(3,1fr)}
+.card{
+  border:1px solid #ddd;border-radius:10px;
+  padding:22px;text-align:center;background:#fff;
+}
+
+/* SVG ICON */
+.icon{
+  width:90px;height:90px;margin:0 auto 14px;
+  fill:#0a3d91;
+}
+
+footer{
+  background:#0a3d91;color:#fff;
+  text-align:center;padding:16px;font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .cats,.products{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  nav{display:none}
+  nav.active{display:flex;flex-direction:column}
+  .burger{display:block}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">GoParts2U</div>
+
+  <nav id="menu">
+    <a href="#home">Home</a>
+    <div class="dropdown">
+      <span>Products</span>
+      <div class="dropdown-menu">
+        <a href="#engine">Engine & Gearbox Mounts</a>
+        <a href="#suspension">Suspension Bush & Links</a>
+        <a href="#control">Control Arms</a>
+        <a href="#hose">Hoses & Rubber Parts</a>
+      </div>
+    </div>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="burger" onclick="toggleMenu()">☰</div>
+</header>
+
+<!-- HERO -->
+<div id="home" class="hero">
+  <h1>Trusted Automotive Parts Supplier</h1>
+  <p>OEM & OEM-Compatible Automotive Parts for Workshops and Car Owners</p>
+  <a class="btn" href="https://wa.me/60123456789">WhatsApp Enquiry</a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About GoParts2U</h2>
+  <p>
+    GoParts2U specializes in engine mounts, suspension bushings, control arms
+    and automotive rubber components for daily driving and professional workshop use.
+  </p>
+</section>
+
+<!-- CATEGORIES -->
+<section>
+  <h2>Product Categories</h2>
+
+  <div class="grid cats">
+    <div class="card" id="engine">
+      <svg class="icon" viewBox="0 0 64 64">
+        <rect x="8" y="20" width="48" height="24" rx="4"/>
+        <circle cx="20" cy="48" r="4"/>
+        <circle cx="44" cy="48" r="4"/>
+      </svg>
+      <strong>Engine & Gearbox Mounts</strong>
+    </div>
+
+    <div class="card" id="suspension">
+      <svg class="icon" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="20"/>
+        <circle cx="32" cy="32" r="8" fill="#fff"/>
+      </svg>
+      <strong>Suspension Bush & Links</strong>
+    </div>
+
+    <div class="card" id="control">
+      <svg class="icon" viewBox="0 0 64 64">
+        <path d="M10 40 L30 20 L54 24 L34 44 Z"/>
+      </svg>
+      <strong>Control Arms</strong>
+    </div>
+
+    <div class="card" id="hose">
+      <svg class="icon" viewBox="0 0 64 64">
+        <path d="M12 32 C12 12,52 12,52 32 S12 52,12 32"/>
+      </svg>
+      <strong>Hoses & Rubber Parts</strong>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section>
+  <h2>Featured Products</h2>
+
+  <div class="grid products">
+    <div class="card">
+      <svg class="icon" viewBox="0 0 64 64">
+        <rect x="14" y="18" width="36" height="28" rx="6"/>
+      </svg>
+      <strong>Engine Mount – Myvi</strong>
+      <p>OEM Compatible</p>
+      <a class="btn" href="https://wa.me/60123456789">WhatsApp</a>
+    </div>
+
+    <div class="card">
+      <svg class="icon" viewBox="0 0 64 64">
+        <circle cx="32" cy="32" r="22"/>
+      </svg>
+      <strong>Suspension Bush</strong>
+      <p>High Durability</p>
+      <a class="btn" href="https://wa.me/60123456789">WhatsApp</a>
+    </div>
+
+    <div class="card">
+      <svg class="icon" viewBox="0 0 64 64">
+        <path d="M8 36 L56 28 L48 44 L16 48 Z"/>
+      </svg>
+      <strong>Control Arm</strong>
+      <p>Direct Fit</p>
+      <a class="btn" href="https://wa.me/60123456789">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Contact us for product enquiry or compatibility checking.</p>
+  <a class="btn" href="https://wa.me/60123456789">WhatsApp Now</a>
+</section>
+
+<footer>
+© 2026 GoParts2U Auto Parts | Malaysia
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+</body>
+</html>
